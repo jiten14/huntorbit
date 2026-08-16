@@ -22,4 +22,3 @@ Static site built with Jekyll, hosted free on GitHub Pages. No database, no back
 
 ---
 
-More details coming soon.
