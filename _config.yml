@@ -1,0 +1,31 @@
+title: HuntOrbit
+description: >-
+  Hands-on SaaS product reviews — honest verdicts, real testing, no fluff.
+url: "https://jiten14.github.io"
+# baseurl intentionally omitted — GitHub's native Jekyll build auto-handles
+# the /huntorbit/ prefix for project sites, and auto-switches to domain
+# root once a CNAME is added in Phase 3. Do not set this manually.
+
+author: HuntOrbit
+email: connect@huntorbit.com
+
+social:
+  github: "https://github.com/jiten14"
+  x: "https://x.com/huntorbit"
+  linkedin: "https://linkedin.com/company/huntorbit"
+  youtube: "https://youtube.com/@huntorbit"
+
+markdown: kramdown
+permalink: /:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

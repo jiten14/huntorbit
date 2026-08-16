@@ -2,7 +2,7 @@
 
 A SaaS product review blog — hands-on reviews, honest verdicts.
 
-🚧 **Status:** Under construction. No design or content live yet.
+🚧 **Status:** Phase 2 complete — full design and 4 launch articles live. Custom domain not yet connected.
 
 ## About
 
@@ -16,9 +16,10 @@ Static site built with Jekyll, hosted free on GitHub Pages. No database, no back
 
 ## Roadmap
 
-- [ ] Phase 1 — Scaffolding & deploy to GitHub subdomain
-- [ ] Phase 2 — Content, design & full build-out
+- [x] Phase 1 — Scaffolding & deploy to GitHub subdomain
+- [x] Phase 2 — Content, design & full build-out
 - [ ] Phase 3 — Testing, custom domain & launch
 
 ---
 
+More details coming soon.

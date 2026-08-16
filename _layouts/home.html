@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="wrap">
+
+  {% assign sorted_posts = site.posts | sort: "date" | reverse %}
+  {% assign featured = sorted_posts | first %}
+  {% assign rest = sorted_posts | slice: 1, 20 %}
+
+  {% if featured %}
+  <div class="hero-label">Featured review</div>
+  <a class="featured" href="{{ featured.url | relative_url }}">
+    <img class="featured-img" src="{{ featured.cover_image | relative_url }}" alt="{{ featured.cover_image_alt }}" width="600" height="400" loading="eager">
+    <div class="featured-text">
+      <span class="tag">{{ site.data.categories[featured.category] | default: featured.category }}</span>
+      <h1>{{ featured.title }}</h1>
+      <p>{{ featured.excerpt | strip_html | truncate: 160 }}</p>
+      {% include rating.html score=featured.rating %}
+    </div>
+  </a>
+  {% endif %}
+
+  <div class="grid-label">Latest reviews</div>
+  <div class="grid">
+    {% for post in rest %}
+      {% include card.html post=post %}
+    {% endfor %}
+  </div>
+
+</div>

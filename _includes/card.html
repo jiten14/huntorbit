@@ -1,0 +1,13 @@
+{% comment %}
+  Usage: {% include card.html post=post %}
+{% endcomment %}
+{% assign post = include.post %}
+<a class="card" href="{{ post.url | relative_url }}">
+  <img class="card-img" src="{{ post.cover_image | relative_url }}" alt="{{ post.cover_image_alt }}" width="400" height="220" loading="lazy">
+  <div class="card-body">
+    <span class="tag">{{ site.data.categories[post.category] | default: post.category }}</span>
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
+    {% include rating.html score=post.rating %}
+  </div>
+</a>

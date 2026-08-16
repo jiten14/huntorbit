@@ -1,0 +1,15 @@
+{% comment %}
+  Usage: {% include rating.html score=post.rating %}
+  Renders filled/half/empty stars out of 5, plus the numeric score.
+{% endcomment %}
+{% assign full = include.score | floor %}
+{% assign remainder = include.score | minus: full %}
+{% assign half_slot = full | plus: 1 %}
+<span class="rating">
+  <span class="stars">
+    {% for i in (1..5) %}
+      {% if i <= full %}★{% elsif remainder >= 0.5 and i == half_slot %}★{% else %}☆{% endif %}
+    {% endfor %}
+  </span>
+  <span class="rating-num">{{ include.score }} / 5</span>
+</span>
