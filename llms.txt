@@ -1,0 +1,26 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# HuntOrbit
+
+> HuntOrbit is a SaaS product review blog. Every review is based on hands-on use of the product — real screenshots, real pricing, honest pros and cons, and a star rating out of 5. No rewritten marketing copy, no reviews of products the author hasn't actually used.
+
+## Site
+
+- [Homepage]({{ '/' | absolute_url }}): Latest reviews, browsable by category
+- [Write for Us]({{ '/write-for-us/' | absolute_url }}): Contributor and sponsored-review guidelines
+- [Privacy Policy]({{ '/privacy/' | absolute_url }})
+- [Terms of Use]({{ '/terms/' | absolute_url }})
+
+## Categories
+{% assign grouped = site.posts | group_by: "category" %}
+{% for cat in grouped %}
+- [{{ site.data.categories[cat.name] | default: cat.name }}]({{ '/category/' | append: cat.name | append: '/' | absolute_url }})
+{% endfor %}
+
+## Reviews
+{% assign sorted_posts = site.posts | sort: "date" | reverse %}
+{% for post in sorted_posts %}
+- [{{ post.title }}]({{ post.url | absolute_url }}): {{ post.excerpt | strip_html | strip_newlines | truncate: 140 }}
+{% endfor %}
