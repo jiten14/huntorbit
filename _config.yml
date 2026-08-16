@@ -16,6 +16,7 @@ social:
   youtube: "https://youtube.com/@huntorbit"
 
 markdown: kramdown
+timezone: Asia/Kolkata
 permalink: /:title/
 
 plugins:
