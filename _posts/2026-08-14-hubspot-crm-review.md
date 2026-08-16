@@ -1,5 +1,6 @@
 ---
 title: "HubSpot CRM Review: What You Actually Get on the Free Tier"
+product_name: HubSpot CRM
 category: crm
 tags: [hubspot, crm, sales, marketing]
 rating: 4.2

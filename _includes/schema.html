@@ -1,0 +1,112 @@
+{% comment %}
+  Dynamically generates JSON-LD structured data based on page.layout.
+  - Every page: Organization schema
+  - home: + WebSite schema
+  - post (single-product review, has page.product_name): + Review schema + BreadcrumbList
+  - post (comparison/no product_name): + Article schema + BreadcrumbList
+  - category: + CollectionPage schema
+  - page (write-for-us/privacy/terms): + WebPage schema
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.title }}",
+  "url": "{{ '/' | absolute_url }}",
+  "logo": "{{ '/assets/images/brand/social-default.webp' | absolute_url }}",
+  "sameAs": [
+    "{{ site.social.github }}",
+    "{{ site.social.x }}",
+    "{{ site.social.linkedin }}",
+    "{{ site.social.youtube }}"
+  ]
+}
+</script>
+
+{% if page.layout == 'home' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title }}",
+  "url": "{{ '/' | absolute_url }}",
+  "description": {{ site.description | jsonify }}
+}
+</script>
+
+{% elsif page.layout == 'post' %}
+  {% if page.product_name %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "{{ page.product_name }}",
+    "applicationCategory": "{{ site.data.categories[page.category] | default: page.category }}"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "{{ page.rating }}",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "author": { "@type": "Organization", "name": "{{ site.title }}" },
+  "publisher": { "@type": "Organization", "name": "{{ site.title }}" },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "image": "{{ page.cover_image | absolute_url }}",
+  "url": "{{ page.url | absolute_url }}"
+}
+</script>
+  {% else %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "image": "{{ page.cover_image | absolute_url }}",
+  "author": { "@type": "Organization", "name": "{{ site.title }}" },
+  "publisher": { "@type": "Organization", "name": "{{ site.title }}" },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "url": "{{ page.url | absolute_url }}"
+}
+</script>
+  {% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | absolute_url }}" },
+    { "@type": "ListItem", "position": 2, "name": "{{ site.data.categories[page.category] | default: page.category }}", "item": "{{ '/category/' | append: page.category | append: '/' | absolute_url }}" },
+    { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": "{{ page.url | absolute_url }}" }
+  ]
+}
+</script>
+
+{% elsif page.layout == 'category' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": {{ page.title | jsonify }},
+  "url": "{{ page.url | absolute_url }}"
+}
+</script>
+
+{% elsif page.layout == 'page' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": {{ page.title | jsonify }},
+  "url": "{{ page.url | absolute_url }}",
+  "description": {{ page.description | jsonify }}
+}
+</script>
+{% endif %}

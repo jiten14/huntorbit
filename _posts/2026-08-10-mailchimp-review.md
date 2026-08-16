@@ -1,5 +1,6 @@
 ---
 title: "Mailchimp Review: Is It Still Worth It in 2026?"
+product_name: Mailchimp
 category: marketing
 tags: [mailchimp, email-marketing, marketing]
 rating: 3.6

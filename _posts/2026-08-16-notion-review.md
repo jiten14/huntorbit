@@ -1,5 +1,6 @@
 ---
 title: "Notion Review: Is It Still the Best All-in-One Workspace in 2026?"
+product_name: Notion
 category: productivity
 tags: [notion, productivity, workspace, docs]
 rating: 4.5
