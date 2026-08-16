@@ -1,7 +1,7 @@
 title: HuntOrbit
 description: >-
   Hands-on SaaS product reviews — honest verdicts, real testing, no fluff.
-url: "https://jiten14.github.io"
+url: "https://huntorbit.com"
 # baseurl intentionally omitted — GitHub's native Jekyll build auto-handles
 # the /huntorbit/ prefix for project sites, and auto-switches to domain
 # root once a CNAME is added in Phase 3. Do not set this manually.
@@ -17,6 +17,9 @@ social:
 
 markdown: kramdown
 permalink: /:title/
+
+plugins:
+  - jekyll-sitemap
 
 defaults:
   - scope:
