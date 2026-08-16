@@ -14,6 +14,9 @@ a { color: inherit; }
 
 /* ===== Header ===== */
 .site-header { border-bottom: 1px solid #E4E1D8; background: #FAF9F6; position: relative; z-index: 50; }
+@media (max-width: 859px) {
+  .site-header .wrap { padding-left: 24px; padding-right: 24px; }
+}
 .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
 .logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
 .logo-word { font-family: 'Fraunces', serif; font-weight: 600; font-size: 21px; color: #1F2D50; }
@@ -58,7 +61,7 @@ body.nav-open .dropdown { position: static; transform: none; width: 100%; margin
 .rating .stars { color: #C9A227; letter-spacing: 2px; }
 
 @media (min-width: 720px) {
-  .featured { grid-template-columns: 1.1fr 1fr; align-items: center; }
+  .featured { grid-template-columns: 1.1fr 1fr; align-items: center; gap: 32px; }
   .featured-img { height: 100%; min-height: 320px; }
   .featured-text { padding: 32px 40px 32px 0; }
   .featured h1 { font-size: 32px; }
