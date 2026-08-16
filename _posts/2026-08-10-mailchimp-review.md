@@ -8,6 +8,7 @@ read_time: 7
 excerpt: "We tested Mailchimp's current pricing tiers and deliverability for a small newsletter list to see if it still holds up against newer email tools."
 description: "An honest 2026 review of Mailchimp — pricing changes, deliverability testing, and how it compares to newer email marketing tools."
 cover_image: /assets/images/reviews/mailchimp-review-cover.webp
+cover_thumb: /assets/images/reviews/mailchimp-review-thumb.webp
 cover_image_alt: "HuntOrbit Mailchimp review cover graphic with compass mark"
 verdict_summary: "Still a solid, reliable choice for small newsletters — but no longer the automatic default it once was, given how competitive the space has become."
 ---

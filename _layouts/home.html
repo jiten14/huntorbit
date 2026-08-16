@@ -10,7 +10,7 @@ layout: default
   {% if featured %}
   <div class="hero-label">Featured review</div>
   <a class="featured" href="{{ featured.url | relative_url }}">
-    <img class="featured-img" src="{{ featured.cover_image | relative_url }}" alt="{{ featured.cover_image_alt }}" width="600" height="400" loading="eager">
+    <img class="featured-img" src="{{ featured.cover_image | relative_url }}" alt="{{ featured.cover_image_alt }}" width="600" height="400" loading="eager" fetchpriority="high">
     <div class="featured-text">
       <span class="tag">{{ site.data.categories[featured.category] | default: featured.category }}</span>
       <h1>{{ featured.title }}</h1>

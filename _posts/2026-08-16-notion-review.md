@@ -8,6 +8,7 @@ read_time: 9
 excerpt: "A hands-on look at Notion's databases, AI features, and pricing in 2026 — where it still wins, and where it slows teams down."
 description: "We put Notion through weeks of daily use in 2026 — databases, AI features, offline mode, and pricing — to see if it's still the best all-in-one workspace."
 cover_image: /assets/images/reviews/notion-review-cover.webp
+cover_thumb: /assets/images/reviews/notion-review-thumb.webp
 cover_image_alt: "HuntOrbit Notion review cover graphic with compass mark"
 verdict_summary: "Still the most flexible all-in-one workspace available — the AI pricing tier is the only real friction point for larger teams."
 ---
