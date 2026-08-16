@@ -18,7 +18,7 @@
         {% assign latest = site.posts | sort: "date" | reverse | slice: 0, 5 %}
         {% for post in latest %}
           <a class="footer-post-link" href="{{ post.url | relative_url }}">
-            <img class="footer-post-thumb" src="{{ post.cover_thumb | default: post.cover_image | relative_url }}" alt="" width="44" height="44" loading="lazy">
+            <img class="footer-post-thumb" src="{{ post.cover_micro | default: post.cover_thumb | default: post.cover_image | relative_url }}" alt="" width="44" height="44" loading="lazy">
             <span class="footer-post-title">{{ post.title }}</span>
           </a>
         {% endfor %}

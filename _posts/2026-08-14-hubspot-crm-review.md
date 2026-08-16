@@ -9,6 +9,7 @@ excerpt: "We tested HubSpot's free CRM tier for a small sales pipeline to see ho
 description: "An honest review of HubSpot CRM's free tier — contact management, pipeline tracking, and exactly where the upgrade prompts start appearing."
 cover_image: /assets/images/reviews/hubspot-crm-review-cover.webp
 cover_thumb: /assets/images/reviews/hubspot-crm-review-thumb.webp
+cover_micro: /assets/images/reviews/hubspot-crm-review-micro.webp
 cover_image_alt: "HuntOrbit HubSpot CRM review cover graphic with compass mark"
 verdict_summary: "A genuinely usable free CRM for small teams — just expect to hit upgrade prompts the moment you need automation or advanced reporting."
 ---

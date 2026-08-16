@@ -8,6 +8,7 @@ excerpt: "We ran the same two-week sprint through both Linear and Jira to see wh
 description: "A hands-on comparison of Linear and Jira for engineering teams — speed, workflow flexibility, and where each tool still wins in 2026."
 cover_image: /assets/images/reviews/linear-vs-jira-cover.webp
 cover_thumb: /assets/images/reviews/linear-vs-jira-thumb.webp
+cover_micro: /assets/images/reviews/linear-vs-jira-micro.webp
 cover_image_alt: "HuntOrbit Linear vs Jira comparison cover graphic with compass mark"
 verdict_summary: "Linear wins on speed and day-to-day usability for most small-to-mid teams; Jira still wins when you need deep customization or enterprise-scale reporting."
 ---
