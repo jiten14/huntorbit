@@ -4,6 +4,7 @@ product_name: HubSpot CRM
 category: crm
 tags: [hubspot, crm, sales, marketing]
 rating: 4.2
+date: 2026-08-21
 read_time: 8
 excerpt: "We tested HubSpot's free CRM tier for a small sales pipeline to see how much is genuinely usable before the upsell prompts start."
 description: "An honest review of HubSpot CRM's free tier — contact management, pipeline tracking, and exactly where the upgrade prompts start appearing."

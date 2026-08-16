@@ -12,7 +12,7 @@ layout: default
   <h1 class="article-title">{{ page.title }}</h1>
   <div class="meta-row">
     {% include rating.html score=page.rating %}
-    <div class="dot"></div>
+    {% if page.rating %}<div class="dot"></div>{% endif %}
     <div>Reviewed {{ page.date | date: "%B %Y" }}</div>
     {% if page.read_time %}
     <div class="dot"></div>

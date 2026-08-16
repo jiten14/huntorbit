@@ -3,6 +3,7 @@ title: "Linear vs Jira in 2026: Which One Should Your Team Actually Use?"
 category: dev-tools
 tags: [linear, jira, project-management, dev-tools]
 rating: 4.8
+date: 2026-08-23
 read_time: 10
 excerpt: "We ran the same two-week sprint through both Linear and Jira to see which issue tracker actually helps a small engineering team ship faster."
 description: "A hands-on comparison of Linear and Jira for engineering teams — speed, workflow flexibility, and where each tool still wins in 2026."

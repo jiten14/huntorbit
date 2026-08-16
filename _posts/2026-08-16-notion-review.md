@@ -4,6 +4,7 @@ product_name: Notion
 category: productivity
 tags: [notion, productivity, workspace, docs]
 rating: 4.5
+date: 2026-08-19
 read_time: 9
 excerpt: "A hands-on look at Notion's databases, AI features, and pricing in 2026 — where it still wins, and where it slows teams down."
 description: "We put Notion through weeks of daily use in 2026 — databases, AI features, offline mode, and pricing — to see if it's still the best all-in-one workspace."

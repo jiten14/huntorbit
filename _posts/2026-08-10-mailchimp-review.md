@@ -4,6 +4,7 @@ product_name: Mailchimp
 category: marketing
 tags: [mailchimp, email-marketing, marketing]
 rating: 3.6
+date: 2026-08-24
 read_time: 7
 excerpt: "We tested Mailchimp's current pricing tiers and deliverability for a small newsletter list to see if it still holds up against newer email tools."
 description: "An honest 2026 review of Mailchimp — pricing changes, deliverability testing, and how it compares to newer email marketing tools."

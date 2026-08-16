@@ -1,7 +1,9 @@
 {% comment %}
   Usage: {% include rating.html score=post.rating %}
   Renders filled/half/empty stars out of 5, plus the numeric score.
+  Renders nothing if score is not set (e.g. announcement posts).
 {% endcomment %}
+{% if include.score %}
 {% assign full = include.score | floor %}
 {% assign remainder = include.score | minus: full %}
 {% assign half_slot = full | plus: 1 %}
@@ -13,3 +15,4 @@
   </span>
   <span class="rating-num">{{ include.score }} / 5</span>
 </span>
+{% endif %}
