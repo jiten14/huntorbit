@@ -92,6 +92,9 @@ huntorbit/
 ├── llms.txt                       # Auto-generated (Liquid-templated) AI-crawler index — see Section 10
 ├── robots.txt                     # Crawler allow/block list — see Section 11
 ├── Gemfile                        # Documents intended gems (github-pages + jekyll-sitemap); not required for the GitHub-native build to work
+├── docs/                          # Human/developer reference docs (this file + Daily_Publishing_Guide.md).
+│                                     Excluded from the Jekyll build via _config.yml `exclude:` — see
+│                                     Section 13, issue #11 if this folder ever breaks the build.
 └── README.md                      # Public-facing repo description
 ```
 
@@ -233,6 +236,7 @@ If something breaks in a way that resembles these, check here first before debug
 8. **Scheduled article didn't publish exactly at midnight IST** → Check the cron value in `.github/workflows/scheduled-rebuild.yml` is `35 18 * * *`, not `5 0 * * *` — see Section 9's critical detail.
 9. **Homepage `<title>` tag shows a stray leading `| HuntOrbit`** → Caused by `index.html` setting `title: ""` (empty string) in front matter — Liquid treats empty string as truthy, so `head.html`'s `{% if page.title %}` check still fired. Fixed two ways at once: `index.html` no longer sets a `title` field at all (falls back to `site.title` cleanly), and `head.html`'s check was hardened to `{% if page.title and page.title != "" %}` so this can't silently recur on any future page that accidentally sets an empty title.
 10. **Homepage shows an empty "Latest reviews" heading with no cards underneath** → Happens whenever there's only 1 total post (it becomes the featured hero, leaving zero posts for the grid). Fixed in `_layouts/home.html` by wrapping the "Latest reviews" heading and grid in `{% if rest.size > 0 %}` — with only one article, the homepage now cleanly shows just the featured card and nothing else. This resolves itself automatically and permanently as soon as a 2nd+ post exists; no manual toggling needed.
+11. **Site build fails entirely with `Liquid syntax error ... 'if' tag was never closed` pointing at a file in `docs/`** → Jekyll runs Liquid over every Markdown file in the repo by default, including reference documentation. Since files like this Build Spec and the Daily Publishing Guide contain literal example Liquid syntax (e.g. `{% if page.rating %}`) inside code fences purely as text for a human to read, Jekyll tries to actually parse it as real template code and fails. Fixed permanently by adding `exclude: [docs/]` to `_config.yml`, which stops Jekyll from touching that folder at all — the files still sit in the repo normally and render fine as plain Markdown when viewed directly on GitHub. **If any new documentation file is ever added outside `docs/`, or a new top-level docs folder is created, add it to this same `exclude:` list before pushing**, or it will break the entire site build, not just fail to render that one file.
 
 ---
 
