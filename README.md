@@ -32,10 +32,14 @@ huntorbit/
 └── favicon files, README.md
 ```
 
+## License
+
+This repository is open source under the [MIT License](./LICENSE). The site's code, templates, and structure are free for anyone to clone, adapt, and build their own project on, with no restrictions and no need to ask permission.
+
 ## Contact
 
 Questions, corrections, or pitching a review? Reach out at [connect@huntorbit.com](mailto:connect@huntorbit.com), or see the contribution guidelines on [huntorbit.com/write-for-us](https://huntorbit.com/write-for-us/).
 
 ---
 
-*Article content is © HuntOrbit. Site structure and code are shared here for transparency into how the site is built and run.*
+*Article content is © HuntOrbit. Site structure and code are MIT licensed — see [LICENSE](./LICENSE).*
