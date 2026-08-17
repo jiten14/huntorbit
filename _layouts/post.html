@@ -13,7 +13,7 @@ layout: default
   <div class="meta-row">
     {% include rating.html score=page.rating %}
     {% if page.rating %}<div class="dot"></div>{% endif %}
-    <div>Reviewed {{ page.date | date: "%B %Y" }}</div>
+    <div>Reviewed {{ page.date | date: "%B %-d, %Y" }}</div>
     {% if page.read_time %}
     <div class="dot"></div>
     <div>{{ page.read_time }} min read</div>
