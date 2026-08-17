@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% if page.title %}
+{% if page.title and page.title != "" %}
   {% assign page_title = page.title | append: " | " | append: site.title %}
 {% else %}
   {% assign page_title = site.title %}

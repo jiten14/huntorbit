@@ -20,11 +20,13 @@ layout: default
   </a>
   {% endif %}
 
+  {% if rest.size > 0 %}
   <div class="grid-label">Latest reviews</div>
   <div class="grid">
     {% for post in rest %}
       {% include card.html post=post %}
     {% endfor %}
   </div>
+  {% endif %}
 
 </div>
