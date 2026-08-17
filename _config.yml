@@ -22,6 +22,9 @@ permalink: /:title/
 plugins:
   - jekyll-sitemap
 
+exclude:
+  - docs/
+
 defaults:
   - scope:
       path: ""
