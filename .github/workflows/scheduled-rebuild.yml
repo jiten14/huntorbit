@@ -4,11 +4,28 @@ name: Scheduled Pages Rebuild
 # rebuilds on a push. This workflow runs daily and calls GitHub's Pages
 # build API directly (no commit needed), so any post whose date has now
 # arrived gets published automatically without manual intervention.
+#
+# IMPORTANT: _config.yml sets `timezone: Asia/Kolkata`, so Jekyll decides
+# a post is "no longer future" starting 00:00 IST, NOT 00:00 UTC. This
+# cron is set in UTC, so it must be offset by -5:30 to actually fire at
+# 00:05 IST every day. 00:05 IST = 18:35 UTC the *previous* calendar day.
+# Do not "simplify" this to 5 0 * * * — that fires at 05:35 IST, a 5.5
+# hour publish delay (this exact bug happened once during launch week).
+#
+# ALSO IMPORTANT: the `permissions` block below is required. Without it,
+# the default GITHUB_TOKEN lacks rights to call the Pages Build API, the
+# call fails, and because plain `curl` doesn't treat an HTTP error status
+# as a failure, the job still shows a false "success" with nothing actually
+# happening. `curl -f` below makes that failure visible instead of silent.
 
 on:
   schedule:
-    - cron: '5 0 * * *'  # 00:05 UTC daily
-  workflow_dispatch: {}   # allows manually triggering a rebuild anytime from the Actions tab
+    - cron: '35 18 * * *'  # 18:35 UTC = 00:05 IST daily
+  workflow_dispatch: {}     # allows manually triggering a rebuild anytime from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
 
 jobs:
   rebuild:
@@ -16,7 +33,8 @@ jobs:
     steps:
       - name: Trigger GitHub Pages build
         run: |
-          curl -X POST \
+          curl -f -X POST \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
+            -w "\nHTTP status: %{http_code}\n" \
             https://api.github.com/repos/${{ github.repository }}/pages/builds
